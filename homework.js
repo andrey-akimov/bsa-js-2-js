@@ -35,7 +35,7 @@ let fight = (fighter, improvedFighter, ...point) => {
 			break;
 		}
 
-		// Сhance to critycal strike is 25%
+		// Сhance to critycal strike is 25%.
 		if(Math.random() < .25){
 			improvedFighter.doubleHit(fighter, randomPoint);
 			console.log(`*** ${improvedFighter.name} slammed DOUBLE HIT! ***`);
@@ -50,6 +50,7 @@ let fight = (fighter, improvedFighter, ...point) => {
 	}
 }
 
+// These fighters are the same. So the work of the doubleHit() function is more understandable.
 let fighter = new Fighter("Zeus", 50, 10000);
 let improvedFighter = new ImprovedFighter("Thor", 50, 10000);
 fight(fighter, improvedFighter, 25, 13, 45);
