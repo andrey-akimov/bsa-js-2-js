@@ -1,3 +1,5 @@
+"use strict";
+
 class Fighter{
 	constructor(name = "Great warrior", power = 10, health = 100){
 		this.name = name;
