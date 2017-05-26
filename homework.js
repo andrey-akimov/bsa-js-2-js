@@ -9,7 +9,11 @@ class Fighter{
 
 	setDamage(damage){
 		this.health -= damage;
-		console.log(`${this.name}'s health: ${this.health}`);
+        if(this.health < 0 || this.health === 0){
+            console.log(`${this.name}'s health could not resist the final blow`);
+        } else {
+            console.log(`${this.name}'s health: ${this.health}`);
+        }
 	}
 
 	hit(enemy, point){
@@ -33,7 +37,7 @@ let fight = (fighter, improvedFighter, ...point) => {
 		fighter.hit(improvedFighter, randomPoint);
 
 		if(improvedFighter.health <= 0){
-			console.log(`${improvedFighter.name} is dead :( and ${fighter.name} won!`);
+			console.log(`${fighter.name} won!`);
 			break;
 		}
 
@@ -46,7 +50,7 @@ let fight = (fighter, improvedFighter, ...point) => {
 		}
 
 		if(fighter.health <= 0){
-			console.log(`${fighter.name} is dead :( and ${improvedFighter.name} won!`);
+			console.log(`${improvedFighter.name} won!`);
 			break;
 		}
 	}
